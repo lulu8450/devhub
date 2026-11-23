@@ -1,0 +1,30 @@
+:root {
+    --bg: #0f1117;
+    --bg-2: #171b26;
+    --card: #1d2330;
+    --primary: #7c83ff;
+    --text: #f1f3f9;
+    --text-2: #a0a8b8;
+    --success: #36c98f;
+}
+
+[data-theme="light"] {
+    --bg: #f6f7fb;
+    --bg-2: #ffffff;
+    --card: #ffffff;
+    --primary: #5a62e8;
+    --text: #171b26;
+    --text-2: #5b6475;
+    --success: #1ea776;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, sans-serif;
+}
