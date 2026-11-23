@@ -1,0 +1,48 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background: var(--bg-2);
+    padding: 1.5rem 1rem;
+    border-right: 1px solid var(--card);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    padding-left: 0.5rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    color: var(--text-2);
+    text-decoration: none;
+    margin-bottom: 0.25rem;
+}
+
+.nav-link:hover {
+    background: var(--card);
+    color: var(--text);
+}
+
+.nav-link.active {
+    background: var(--card);
+    color: var(--primary);
+}
+
+.content {
+    flex: 1;
+    min-width: 0;
+}
