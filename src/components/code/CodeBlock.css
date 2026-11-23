@@ -1,0 +1,46 @@
+.code-block {
+    background: var(--bg-2);
+    border: 1px solid var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+    background: var(--card);
+    color: var(--text-2);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.code-header button {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: transparent;
+    border: none;
+    color: var(--text-2);
+    cursor: pointer;
+    font: inherit;
+    text-transform: none;
+}
+
+.code-header button:hover {
+    color: var(--primary);
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.code-block code {
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--text);
+}

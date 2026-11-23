@@ -1,0 +1,91 @@
+.page {
+    padding: 2rem;
+    max-width: 1000px;
+}
+
+.muted {
+    color: var(--text-2);
+}
+
+.back {
+    color: var(--text-2);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back:hover {
+    color: var(--primary);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.tech-card {
+    background: var(--card);
+    border-top: 4px solid var(--primary);
+    border-radius: 10px;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.tech-card:hover {
+    transform: translateY(-2px);
+}
+
+.tech-card h2 {
+    margin: 0 0 0.4rem;
+}
+
+.tech-card p {
+    margin: 0 0 0.6rem;
+    color: var(--text-2);
+    font-size: 0.9rem;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--bg-2);
+    color: var(--text-2);
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+}
+
+.doc-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.chapter {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    color: var(--text-2);
+    text-decoration: none;
+}
+
+.chapter:hover {
+    background: var(--card);
+    color: var(--text);
+}
+
+.chapter.active {
+    background: var(--card);
+    color: var(--primary);
+}
+
+.chapter-content h2 {
+    margin-top: 0.5rem;
+}

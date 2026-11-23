@@ -2,13 +2,16 @@ import { Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout.jsx'
 import PagePlaceholder from './components/common/PagePlaceholder.jsx'
 import Home from './pages/Home/Home.jsx'
+import Documentation from './pages/Documentation/Documentation.jsx'
+import Technology from './pages/Documentation/Technology.jsx'
 
 export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/documentation" element={<PagePlaceholder title="Documentation" />} />
+        <Route path="/documentation" element={<Documentation />} />
+        <Route path="/documentation/:techId/:chapterId?" element={<Technology />} />
         <Route path="/cheatsheets" element={<PagePlaceholder title="Cheat Sheets" />} />
         <Route path="/apprentissage" element={<PagePlaceholder title="Apprentissage" />} />
         <Route path="/exercices" element={<PagePlaceholder title="Exercices" />} />
