@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom'
 import {
     Home, BookOpen, FileText, GraduationCap,
-    Dumbbell, Brain, Star, TrendingUp,
+    Dumbbell, Brain, Star, TrendingUp, Sun, Moon,
 } from 'lucide-react'
+import useTheme from '../../hooks/useTheme.js'
 
 const links = [
     { to: '/', label: 'Accueil', icon: Home },
@@ -16,6 +17,8 @@ const links = [
 ]
 
 export default function Sidebar() {
+    const { theme, toggle } = useTheme()
+
     return (
         <aside className="sidebar">
             <div className="logo">DevHub</div>
@@ -27,6 +30,10 @@ export default function Sidebar() {
                     </NavLink>
                 ))}
             </nav>
+            <button className="theme-toggle" onClick={toggle}>
+                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                <span>{theme === 'dark' ? 'Mode clair' : 'Mode sombre'}</span>
+            </button>
         </aside>
     )
 }
