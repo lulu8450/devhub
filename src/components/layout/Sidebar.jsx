@@ -4,6 +4,7 @@ import {
     Dumbbell, Brain, Star, TrendingUp, Sun, Moon,
 } from 'lucide-react'
 import useTheme from '../../hooks/useTheme.js'
+import SearchBar from './SearchBar.jsx'
 
 const links = [
     { to: '/', label: 'Accueil', icon: Home },
@@ -22,6 +23,7 @@ export default function Sidebar() {
     return (
         <aside className="sidebar">
             <div className="logo">DevHub</div>
+            <SearchBar />
             <nav>
                 {links.map(({ to, label, icon: Icon }) => (
                     <NavLink key={to} to={to} end={to === '/'} className="nav-link">
