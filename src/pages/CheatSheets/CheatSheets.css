@@ -1,0 +1,86 @@
+.sheet-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.sheet-tab {
+    padding: 0.5rem 1rem;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 3px solid var(--primary);
+    color: var(--text-2);
+    text-decoration: none;
+}
+
+.sheet-tab.active {
+    background: var(--card);
+    color: var(--text);
+}
+
+.sheet-filter {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.55rem 0.75rem;
+    margin-bottom: 0.5rem;
+    background: var(--card);
+    border: 1px solid var(--card);
+    border-radius: 8px;
+    color: var(--text);
+    font: inherit;
+    outline: none;
+}
+
+.sheet-filter:focus {
+    border-color: var(--primary);
+}
+
+.sheet-section h2 {
+    font-size: 1rem;
+    margin: 1.5rem 0 0.5rem;
+    color: var(--primary);
+}
+
+.sheet-row {
+    display: grid;
+    grid-template-columns: minmax(180px, 340px) 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: var(--card);
+    border-radius: 8px;
+    margin-bottom: 0.4rem;
+}
+
+.sheet-row code {
+    font-family: Consolas, 'Courier New', monospace;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.sheet-row span {
+    color: var(--text-2);
+    font-size: 0.9rem;
+}
+
+.copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-2);
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.copy-btn:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 700px) {
+    .sheet-row {
+        grid-template-columns: 1fr auto;
+    }
+
+    .sheet-row span {
+        grid-column: 1 / -1;
+        order: 3;
+    }
+}

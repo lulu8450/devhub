@@ -4,6 +4,7 @@ import PagePlaceholder from './components/common/PagePlaceholder.jsx'
 import Home from './pages/Home/Home.jsx'
 import Documentation from './pages/Documentation/Documentation.jsx'
 import Technology from './pages/Documentation/Technology.jsx'
+import CheatSheets from './pages/CheatSheets/CheatSheets.jsx'
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/documentation" element={<Documentation />} />
         <Route path="/documentation/:techId/:chapterId?" element={<Technology />} />
-        <Route path="/cheatsheets" element={<PagePlaceholder title="Cheat Sheets" />} />
+        <Route path="/cheatsheets/:sheetId?" element={<CheatSheets />} />
         <Route path="/apprentissage" element={<PagePlaceholder title="Apprentissage" />} />
         <Route path="/exercices" element={<PagePlaceholder title="Exercices" />} />
         <Route path="/revision" element={<PagePlaceholder title="Révision" />} />

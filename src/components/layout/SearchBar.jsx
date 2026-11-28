@@ -26,7 +26,7 @@ export default function SearchBar() {
                     ) : (
                         results.map((r) => (
                             <Link
-                                key={r.to}
+                                key={r.to + r.title}
                                 to={r.to}
                                 className="search-item"
                                 onClick={() => setQuery('')}
