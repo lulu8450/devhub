@@ -19,7 +19,7 @@ const css = {
 body {
     font-family: Arial, sans-serif;
 }
-<!-- Permet de changer la font-family de chaque balise se trouvant a l'intèrieure de body -->`,
+/* Permet de changer la font-family de chaque balise se trouvant a l'intèrieure de body */`,
             mistakes: [
                 'Se tromper de chemin dans href : le fichier CSS doit être trouvé depuis la page.',
                 'Oublier rel="stylesheet" : le navigateur ignore alors le fichier.',
@@ -32,19 +32,19 @@ body {
             explanation:
                 "Un sélecteur désigne les éléments à styler. On peut cibler une balise (NomDeLaBalise), une classe (.NomDeLaClasse) ou un identifiant unique (#NomDeL'Identifiant). Les couleurs s'écrivent avec un nom, un code hexadécimal ou rgb().",
             code:
-`<!-- Cible toutes les balise "h1" -->
+`/* Cible toutes les balises "h1" */
 h1 { color: darkblue; }
 
-<!-- Cible toutes les balise ayant la class "carte" -->
+/* Cible toutes les balises ayant la classe "carte" */
 .carte { background: lightgrey; }
 
-<!-- Cible la balise ayant l'Identifiant Unique "mennu" -->
+/* Cible la balise ayant l'identifiant unique "menu" */
 #menu { color: #5a62e8; }
 
-<!-- Cible toutes les balise "h2", "h3" et "h4" -->
+/* Cible toutes les balises "h2", "h3" et "h4" */
 h2, h3, h4 { color: rgb(0, 0, 0); }
 
-<!-- Cible toutes les balise "p" se trouvant à l'intèrieure de la balise avec la class "champ" -->
+/* Cible toutes les balises "p" à l'intérieur d'un élément ayant la classe "champ" */
 .champ p { color: rgb(60, 60, 60); }`,
             mistakes: [
                 'Oublier le point devant une classe ou le # devant un identifiant.',
