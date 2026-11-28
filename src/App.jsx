@@ -5,6 +5,8 @@ import Home from './pages/Home/Home.jsx'
 import Documentation from './pages/Documentation/Documentation.jsx'
 import Technology from './pages/Documentation/Technology.jsx'
 import CheatSheets from './pages/CheatSheets/CheatSheets.jsx'
+import Revision from './pages/Revision/Revision.jsx'
+import QuizPage from './pages/Revision/QuizPage.jsx'
 
 export default function App() {
   return (
@@ -16,7 +18,8 @@ export default function App() {
         <Route path="/cheatsheets/:sheetId?" element={<CheatSheets />} />
         <Route path="/apprentissage" element={<PagePlaceholder title="Apprentissage" />} />
         <Route path="/exercices" element={<PagePlaceholder title="Exercices" />} />
-        <Route path="/revision" element={<PagePlaceholder title="Révision" />} />
+        <Route path="/revision" element={<Revision />} />
+        <Route path="/revision/:quizId" element={<QuizPage />} />
         <Route path="/favoris" element={<PagePlaceholder title="Favoris" />} />
         <Route path="/progression" element={<PagePlaceholder title="Ma progression" />} />
       </Route>
