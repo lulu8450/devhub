@@ -1,10 +1,14 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { CheckCircle, Star } from 'lucide-react'
 import { technologies } from '../../data/documentation/index.js'
 import CodeBlock from '../../components/code/CodeBlock.jsx'
+import useLocalStorage from '../../hooks/useLocalStorage.js'
 import './Documentation.css'
 
 export default function Technology() {
     const { techId, chapterId } = useParams()
+    const [read, setRead] = useLocalStorage('devhub-chapters-read', {})
+    const [favorites, setFavorites] = useLocalStorage('devhub-favorites', [])
     const tech = technologies.find((t) => t.id === techId)
 
     if (!tech) return <Navigate to="/documentation" replace />
@@ -19,8 +23,14 @@ export default function Technology() {
         )
     }
 
-    const chapter =
-        tech.chapters.find((c) => c.id === chapterId) ?? tech.chapters[0]
+    const chapter = tech.chapters.find((c) => c.id === chapterId) ?? tech.chapters[0]
+    const key = `${tech.id}/${chapter.id}`
+    const isRead = Boolean(read[key])
+    const isFavorite = favorites.includes(key)
+
+    const toggleRead = () => setRead({ ...read, [key]: !isRead })
+    const toggleFavorite = () =>
+        setFavorites(isFavorite ? favorites.filter((f) => f !== key) : [...favorites, key])
 
     return (
         <main className="page">
@@ -34,7 +44,10 @@ export default function Technology() {
                             to={`/documentation/${tech.id}/${c.id}`}
                             className={c.id === chapter.id ? 'chapter active' : 'chapter'}
                         >
-                            {c.title}
+                            <span>{c.title}</span>
+                            {read[`${tech.id}/${c.id}`] && (
+                                <CheckCircle size={16} className="chapter-done" />
+                            )}
                         </Link>
                     ))}
                 </nav>
@@ -47,6 +60,22 @@ export default function Technology() {
                     <ul>
                         {chapter.mistakes.map((m) => <li key={m}>{m}</li>)}
                     </ul>
+                    <div className="chapter-actions">
+                        <button
+                            className={isRead ? 'action-btn on' : 'action-btn'}
+                            onClick={toggleRead}
+                        >
+                            <CheckCircle size={16} />
+                            {isRead ? 'Chapitre lu' : 'Marquer comme lu'}
+                        </button>
+                        <button
+                            className={isFavorite ? 'action-btn fav on' : 'action-btn fav'}
+                            onClick={toggleFavorite}
+                        >
+                            <Star size={16} />
+                            {isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+                        </button>
+                    </div>
                 </article>
             </div>
         </main>

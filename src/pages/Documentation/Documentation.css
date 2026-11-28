@@ -89,3 +89,50 @@
 .chapter-content h2 {
     margin-top: 0.5rem;
 }
+
+.chapter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chapter-done {
+    color: var(--success);
+    flex-shrink: 0;
+}
+
+.chapter-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: var(--text-2);
+    border: 1px solid var(--card);
+    border-radius: 8px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background: var(--card);
+    color: var(--text);
+}
+
+.action-btn.on {
+    color: var(--success);
+    border-color: var(--success);
+}
+
+.action-btn.fav.on {
+    color: #f0c53b;
+    border-color: #f0c53b;
+}
