@@ -1,4 +1,5 @@
 import html from './html.js'
+import css from './css.js'
 
 const soon = (id, name, color, description) => ({
     id, name, color, description, chapters: [],
@@ -6,7 +7,7 @@ const soon = (id, name, color, description) => ({
 
 export const technologies = [
     html,
-    soon('css', 'CSS', '#3c8ce8', 'Le design et la mise en page.'),
+    css,
     soon('javascript', 'JavaScript', '#f0c53b', "L'interactivité des pages."),
     soon('php', 'PHP', '#7a86b8', 'Le langage côté serveur.'),
     soon('sql', 'SQL', '#36c98f', 'Interroger les bases de données.'),
